@@ -1,0 +1,29 @@
+version: '2.2'
+services:
+  nginx:
+    container_name: nginx
+    restart: always
+    image: "nginx:latest"
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - web_network
+    depends_on: 
+      - nodered
+  nodered:
+    container_name: nodered
+    restart: always
+    image: "dpflores/nodered_acme:base"
+    ports:
+      - "1880:1880"
+    networks:
+      - web_network
+ 
+networks:
+  db_network:
+    driver: bridge
+  web_network:
+    driver: bridge
+ 
