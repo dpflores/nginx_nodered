@@ -1,5 +1,17 @@
 version: '2.2'
 services:
+
+  nodered:
+    container_name: nodered
+    restart: always
+    image: "dpflores/nodered_acme:base"
+    ports:
+      - "1880:1880"
+    volumes:
+      - node-red-data:/data
+    networks:
+      - web_network
+      
   nginx:
     container_name: nginx1
     restart: always
@@ -12,16 +24,7 @@ services:
       - web_network
     depends_on: 
       - nodered
-  nodered:
-    container_name: nodered
-    restart: always
-    image: "dpflores/nodered_acme:base"
-    ports:
-      - "1880:1880"
-    volumes:
-      - node-red-data:/data
-    networks:
-      - web_network
+  
  
 networks:
   db_network:
