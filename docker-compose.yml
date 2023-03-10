@@ -19,7 +19,7 @@ services:
     ports:
       - "1880:1880"
     volumes:
-      - ./data:/data
+      - node-red-data:/data
     networks:
       - web_network
  
@@ -29,3 +29,5 @@ networks:
   web_network:
     driver: bridge
  
+volumes:
+  node-red-data:
