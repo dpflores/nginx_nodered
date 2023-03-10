@@ -18,6 +18,8 @@ services:
     image: "dpflores/nodered_acme:base"
     ports:
       - "1880:1880"
+    volumes:
+      - ./data:/data
     networks:
       - web_network
  
