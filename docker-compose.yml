@@ -11,13 +11,13 @@ services:
       - node-red-data:/data
     networks:
       - web_network
-      
+
   nginx:
     container_name: nginx1
     restart: always
     image: "nginx:latest"
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d
     networks:
