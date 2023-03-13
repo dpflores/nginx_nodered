@@ -1,16 +1,14 @@
 version: '3.7'
-services:
 
-  nodered:
-    container_name: nodered
-    restart: always
-    image: "nodered"
+services:
+  node-red:
+    image: nodered/node-red:latest
     ports:
       - "1880:1880"
+    networks:
+      - node-red-net
     volumes:
       - node-red-data:/data
-    networks:
-      - web_network
 
   nginx:
     container_name: nginx1
