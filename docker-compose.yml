@@ -4,7 +4,7 @@ services:
   nodered:
     container_name: nodered
     restart: always
-    image: "nodered"
+    image: "nodered/node-red"
     ports:
       - "1880:1880"
     volumes:
