@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  node-red:
+  nodered:
     image: nodered/node-red:latest
     ports:
       - "1880:1880"
