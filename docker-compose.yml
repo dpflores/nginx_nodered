@@ -10,6 +10,15 @@ services:
     volumes:
       - node-red-data:/data
 
+  nodered2:
+    image: nodered/node-red:latest
+    ports:
+      - "1880:1880"
+    networks:
+      - web_network
+    volumes:
+      - node-red-data2:/data
+
   nginx:
     container_name: nginx1
     restart: always
@@ -32,3 +41,4 @@ networks:
  
 volumes:
   node-red-data:
+  node-red-data2:
