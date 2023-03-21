@@ -4,7 +4,7 @@ services:
   nodered:
     image: nodered/node-red:latest
     ports:
-      - "1880:80"
+      - "1880:1880"
     networks:
       - web_network
     volumes:
@@ -13,7 +13,7 @@ services:
   nodered2:
     image: nodered/node-red:latest
     ports:
-      - "1881:80"
+      - "1881:1880"
     networks:
       - web_network
     volumes:
